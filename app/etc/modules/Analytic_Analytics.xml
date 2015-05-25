@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+ * {analytic_license_notice}
+ *
+ * @category   Analytic
+ * @package    Analytics
+ * @copyright  {analytic_copyright}
+ * @license    {analytic_license}
+-->
+<config>
+    <modules>
+        <Analytic_Analytics>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Analytic_Analytics>
+    </modules>
+</config>

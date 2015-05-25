@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--
+
+-->
+<layout>
+    <default>
+        <reference name="notifications">
+            <block type="analytic_dashboard/adminhtml_notifications" name="analytic_dashboard_notifications" template="analytic_dashboard/notifications.phtml"></block>
+        </reference>
+    </default>
+    <adminhtml_dashboards_index>
+        <reference name="content">
+            <block type="analytic_dashboard/adminhtml_dashboard" name="analytic_dashboard" />
+        </reference>
+    </adminhtml_dashboards_index>
+    <adminhtml_userdashboard_view>
+        <reference name="root">
+            <action method="addBodyClass"><className>analitics-dashboard</className></action>
+        </reference>
+        <reference name="head">
+            <action method="addJs"><script>analytic/jquery-1.8.2.min.js</script></action>
+            <action method="addJs"><script>analytic/jquery.form.js</script></action>
+            <!--action method="addJs"><script>analytic/jquery.print.js</script></action-->
+            <action method="addJs"><script>analytic/jquery.print2.js</script></action>
+            <action method="addJs"><script>analytic/jquery-ui-1.9.0.custom.min.js</script></action>
+            <action method="addJs"><script>analytic/jquery.jqplot.min.js</script></action>
+            <action method="addItem"><type>js</type><name>analytic/excanvas.min.js</name><params/><if>lt IE 9</if></action>
+
+            <action method="addJs"><script>analytic/jquery.noConflict.js</script></action>
+
+            <action method="addJs"><script>analytic/plugins/jqplot.barRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.enhancedLegendRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.highlighter.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.cursor.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.pointLabels.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.categoryAxisRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.logAxisRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.canvasTextRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.canvasAxisLabelRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.canvasAxisTickRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.pieRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.donutRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.bubbleRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.dateAxisRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/progressbar/progressbar.min.js</script></action>
+            <action method="addJs"><script>analytic/date/moment.js</script></action>
+
+            <action method="addJs"><script>analytic/custom.js</script></action>
+            <action method="addItem"><type>js</type><name>analytic/ie.js</name><params/><if>lt IE 8</if></action>
+
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/ui-lightness/jquery-ui-1.8.24.custom.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/jquery.jqplot.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/custom.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/progressbar.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="analytic_dashboard/adminhtml_userdashboard" name="userdashboard" template="analytic_dashboard/user/main.phtml">
+                <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_userdashboard_view>
+    <adminhtml_userdashboard_print>
+        <reference name="root">
+            <action method="addBodyClass"><className>analitics-dashboard</className></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/ui-lightness/jquery-ui-1.8.24.custom.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/jquery.jqplot.min.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/custom.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/printpage.css</name><params>media="all"</params></action>>
+
+            <action method="addJs"><script>analytic/jquery-1.8.2.min.js</script></action>
+            <action method="addJs"><script>analytic/jquery.form.js</script></action>
+            <action method="addJs"><script>analytic/jquery.print2.js</script></action>
+            <action method="addJs"><script>analytic/jquery-ui-1.9.0.custom.min.js</script></action>
+            <action method="addJs"><script>analytic/jquery.jqplot.js</script></action>
+            <action method="addItem"><type>js</type><name>analytic/excanvas.min.js</name><params/><if>lt IE 9</if></action>
+
+            <action method="addJs"><script>analytic/plugins/jqplot.barRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.enhancedLegendRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.highlighter.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.cursor.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.pointLabels.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.categoryAxisRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.logAxisRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.canvasTextRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.canvasAxisLabelRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.canvasAxisTickRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.pieRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.donutRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.bubbleRenderer.min.js</script></action>
+            <action method="addJs"><script>analytic/plugins/jqplot.dateAxisRenderer.min.js</script></action>
+
+            <action method="addJs"><script>analytic/jquery.noConflict.js</script></action>
+            <action method="addJs"><script>analytic/custom.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="analytic_dashboard/adminhtml_userdashboard" name="userdashboard" template="analytic_dashboard/user/print.phtml" />
+        </reference>
+    </adminhtml_userdashboard_print>
+    <adminhtml_userdashboard_dailyaggregationstart>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>analytic_dashboard/aggregation.css</name></action>
+            <action method="addJs"><script>analytic/jquery-1.8.2.min.js</script></action>
+            <action method="addJs"><script>analytic/jquery.noConflict.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="analytic_dashboard/adminhtml_userdashboard_aggregation" name="aggregation" />
+        </reference>
+    </adminhtml_userdashboard_dailyaggregationstart>
+</layout>

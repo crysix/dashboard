@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!--
+
+-->
+
+<config>
+    <modules>
+        <Analytic_Dashboard>
+            <version>1.0.0</version>
+        </Analytic_Dashboard>
+    </modules>
+    <global>
+        <models>
+            <analytic_dashboard>
+                <class>Analytic_Dashboard_Model</class>
+                <resourceModel>analytic_dashboard_resource</resourceModel>
+            </analytic_dashboard>
+            <analytic_dashboard_resource>
+                <class>Analytic_Dashboard_Model_Resource</class>
+                <entities>
+                    <dashboard>
+                        <table>analytic_dashboard</table>
+                    </dashboard>
+                    <permissions_role>
+                        <table>analytic_dashboard_permissions_role</table>
+                    </permissions_role>
+                    <permissions_user>
+                        <table>analytic_dashboard_permissions_user</table>
+                    </permissions_user>
+                    <widget>
+                        <table>analytic_dashboard_widget</table>
+                    </widget>
+                    <widget_relation>
+                        <table>analytic_dashboard_widget_relation</table>
+                    </widget_relation>
+                </entities>
+            </analytic_dashboard_resource>
+        </models>
+        <resources>
+            <analytic_dashboard_setup>
+                <setup>
+                    <module>Analytic_Dashboard</module>
+                    <class>Analytic_Dashboard_Model_Resource_Setup</class>
+                </setup>
+            </analytic_dashboard_setup>
+        </resources>
+        <helpers>
+            <analytic_dashboard>
+                <class>Analytic_Dashboard_Helper</class>
+            </analytic_dashboard>
+        </helpers>
+        <blocks>
+            <analytic_dashboard>
+                <class>Analytic_Dashboard_Block</class>
+            </analytic_dashboard>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <analytic_dashboard before="Mage_Adminhtml">Analytic_Dashboard_Adminhtml</analytic_dashboard>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <analytic_dashboard>
+                    <file>analytic_dashboard.xml</file>
+                </analytic_dashboard>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Analytic_Dashboard>
+                    <files>
+                        <default>Analytic_Dashboard.csv</default>
+                    </files>
+                </Analytic_Dashboard>
+            </modules>
+        </translate>
+    </adminhtml>
+    <metrics>
+        <number_of_new_customers>
+            <label># of new customers</label>
+            <label_avg>Avg. new customers</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfNewCustomers</class>
+        </number_of_new_customers>
+        <number_of_page_views>
+            <label># of page views</label>
+            <label_avg>Avg. page views</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfPageViews</class>
+        </number_of_page_views>
+        <!--<number_of_new_visitors>
+            <label># of new visitors</label>
+            <label_avg>Avg. new visitors</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfNewVisitors</class>
+        </number_of_new_visitors>-->
+        <number_of_customers>
+            <label># of registered visitors</label>
+            <label_avg>Avg. registered visitors</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfCustomers</class>
+        </number_of_customers>
+        <number_of_visitors>
+            <label># of new visitors</label>
+            <label_avg>Avg. visitors</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfVisitors</class>
+        </number_of_visitors>
+        <number_of_orders>
+            <label># of orders</label>
+            <label_avg>Avg. orders</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfOrders</class>
+        </number_of_orders>
+        <!--<number_of_checkouts>
+            <label># of checkouts</label>
+            <label_avg>Avg. checkouts</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfCheckouts</class>
+        </number_of_checkouts>-->
+        <number_of_carts>
+            <label># of carts</label>
+            <label_avg>Avg. carts</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfCarts</class>
+        </number_of_carts>
+        <number_of_new_customers_orders>
+            <label># of orders by new customers</label>
+            <label_avg>Avg. orders by new customers</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfNewCustomersOrders</class>
+        </number_of_new_customers_orders>
+        <!--<number_of_refers>
+            <label># of refers</label>
+            <label_avg>Avg. refers</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfNewCustomersOrders</class>
+        </number_of_refers>-->
+        <number_of_products_in_cart>
+            <label># of products in cart</label>
+            <label_avg>Avg. products in cart</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfProductsInCart</class>
+        </number_of_products_in_cart>
+        <number_of_logins>
+            <label># of returned customers</label>
+            <label_avg>Avg. returned customers</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfLogins</class>
+        </number_of_logins>
+        <number_of_wishlist_products>
+            <label># of products in wishlist</label>
+            <label_avg>Avg. products in wishlist</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfWishlistProducts</class>
+        </number_of_wishlist_products>
+        <number_of_product_views>
+            <label># of products views</label>
+            <label_avg>Avg. products views</label_avg>
+            <class>Analytic_Dashboard_Model_Metric_NumberOfProductViews</class>
+        </number_of_product_views>
+        <amount_of_orders>
+            <label>Orders value</label>
+            <label_avg>Avg. orders value</label_avg>
+            <is_money>1</is_money>
+            <class>Analytic_Dashboard_Model_Metric_AmountOfOrders</class>
+        </amount_of_orders>
+        <amount_of_cart_products>
+            <label>Carts value</label>
+            <label_avg>Avg. carts value</label_avg>
+            <is_money>1</is_money>
+            <class>Analytic_Dashboard_Model_Metric_AmountOfCartProducts</class>
+        </amount_of_cart_products>
+        <amount_of_new_customers_orders>
+            <label>New customers orders value</label>
+            <label_avg>Avg. new customers orders value</label_avg>
+            <is_money>1</is_money>
+            <class>Analytic_Dashboard_Model_Metric_AmountOfNewCustomersOrders</class>
+        </amount_of_new_customers_orders>
+        <amount_of_returned_customers_orders>
+            <label>Returned customers order value</label>
+            <label_avg>Avg. returned customers order value</label_avg>
+            <is_money>1</is_money>
+            <class>Analytic_Dashboard_Model_Metric_AmountOfReturnedCustomersOrders</class>
+        </amount_of_returned_customers_orders>
+    </metrics>
+    <grouped_by_attributes>
+        <country_id/>
+        <region/>
+    </grouped_by_attributes>
+    <default>
+        <analytic_dashboard>
+            <general>
+                <partitioning>1</partitioning>
+            </general>
+        </analytic_dashboard>
+    </default>
+</config>

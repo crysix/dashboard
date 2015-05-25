@@ -1,0 +1,9 @@
+<?php
+
+?>
+<?php if(Mage::helper('analytic_dashboard')->canUsePartitions() && !Mage::helper('analytic_dashboard')->isPartitionsAvailable()):?>
+<div class="notification-global">
+    <strong><?php echo $this->helper('analytic_dashboard')->__('Analytic Dashboard:') ?></strong>
+    <?php echo $this->helper('analytic_dashboard')->__('MySQL server has no partitioning feature. Please set "Use MySql Partitioning" to No in <a href="%s">dashboard options</a>.', $this->getManageUrl());?>
+</div>
+<?php endif;?>
